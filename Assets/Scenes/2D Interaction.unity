@@ -10061,11 +10061,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09603b8ffa9a65443a3065b25a8005d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialougeManager: {fileID: 0}
   dialogue:
     naming: Gnome
     sentences:
     - Hello
-    - nice to meet you
+    - Nice to meet you
     - I'm doing well
   isTalking: 0
 --- !u!1 &1581537074
@@ -10199,6 +10200,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb612de652218445a459e4ad2d0b786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 
+  inDialogue: 0
+  ui: {fileID: 0}
+  player: {fileID: 0}
 --- !u!4 &1681237910
 Transform:
   m_ObjectHideFlags: 0
