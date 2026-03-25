@@ -2,21 +2,30 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour, IInteractable
 {
-
+    [SerializeField]
+    DialogueManagerScript dialougeManager;
     public Dialogue dialogue;
+
     public bool isTalking = false;
+
+    private void Awake()
+    {
+        dialougeManager = ServiceHub.Instance.DialogueManagerSript;
+    }
     public void Interact()
     {
-        if(isTalking == false)
+
+        if(dialougeManager.inDialogue == true)
         {
-            ServiceHub.Instance.DialogueManagerSript.StartDialogue(dialogue);
-            
+            dialougeManager.DisplayNextMessage();
         }
-        if (isTalking == true)
+        else
         {
-            ServiceHub.Instance.DialogueManagerSript.DisplayNextMessage();
+            dialougeManager.StartDialogue(dialogue);
         }
-        isTalking = true;
+           
+      
+        
     }
 
 }
